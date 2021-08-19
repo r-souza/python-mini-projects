@@ -1,4 +1,4 @@
-# Translate Clipboard to MacOS Notification
+# Translate Clipboard to macOS Notification
 
 ## About
 
