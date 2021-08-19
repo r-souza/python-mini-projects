@@ -2,7 +2,7 @@
 
 ## About
 
-This project uses **googletrans** and **pyperclip** packages to translate the text in the clipboard and display it as a MacOS notification
+This project uses **googletrans** and **pyperclip** packages to translate the text in the clipboard and display it as a macOS notification
 
 ## Getting started
 
