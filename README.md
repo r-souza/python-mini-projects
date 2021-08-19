@@ -3,5 +3,5 @@ Repository for Mini Projects in Python
 
 ## Projects:
 
-- [Translate Clipboard to MacOS Notification](macos-translate-clipboard/)
+- [Translate Clipboard to macOS Notification](macos-translate-clipboard/)
 
