@@ -1,6 +1,7 @@
 import config.app_config as config
 import requests
 from bs4 import BeautifulSoup
+import core.files as files
 
 def login() -> requests.Session:
     """
@@ -77,3 +78,18 @@ def get_categories(domains: set) -> list:
         results.append(result)
 
     return results
+
+def get_file_categories(file_path: str, write_output_file = True) -> list:
+    """
+    Get domain categories for a file using NxFilter.
+    """
+    file_content = files.get_file_content(file_path)
+    domains = set(file_content.strip().split('\n'))
+
+    classified = get_categories(domains)
+
+    if write_output_file:
+        classified = sorted(classified, key=lambda x: x['category'])
+        files.write_domain_category_csv(config.OUTPUT_CLASSIFIED_CSV, classified)
+    
+    return classified

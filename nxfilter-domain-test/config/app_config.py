@@ -16,3 +16,6 @@ NXFILTER_GUI = environ.get('NXFILTER_GUI', 'default')
 NXFILTER_BASEURL = environ.get('NXFILTER_BASEURL')
 NXFILTER_LOGIN_URI = '{}/admin.jsp'.format(NXFILTER_BASEURL)
 NXFILTER_CATEGORY_URI = '{}/category,domain_test.jsp'.format(NXFILTER_BASEURL)
+
+# Paths
+OUTPUT_CLASSIFIED_CSV = environ.get('OUTPUT_CLASSIFIED_CSV', '{}/Downloads/classified.csv'.format(path.expanduser('~')))
