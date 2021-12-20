@@ -45,11 +45,10 @@ def parse_default_gui(soup: BeautifulSoup) -> str:
 
     return result
 
-def get_category(domain: str) -> str:
+def get_category(domain: str, s = login()) -> str:
     """
     Get domain category using NxFilter.
     """
-    s = login()
 
     response = domain_test(domain, s)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -59,6 +58,22 @@ def get_category(domain: str) -> str:
     else:
         result = parse_default_gui(soup)
 
-    print(result)
+    print('Domain: {} - {}'.format(domain, result))
     
     return result
+
+def get_categories(domains: set) -> list:
+    """
+    Get domain categories using NxFilter.
+    """
+    s = login()
+
+    results = []
+    for domain in domains:
+        result = {
+            'domain': domain,
+            'category': get_category(domain, s)
+        }
+        results.append(result)
+
+    return results

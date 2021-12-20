@@ -2,7 +2,7 @@
 
 ## About
 
-This project uses **requests** and **BeautifulSoup** packages to access the NxFilter and extract category information for a given domain.
+This project uses **requests** and **BeautifulSoup** packages to access the NxFilter server and extract category information for a given domain.
 
 ## Getting started
 
@@ -33,7 +33,9 @@ Usage: app.py [OPTIONS]
   Get domain categories using NxFilter.
 
 Options:
-  -d, --domain TEXT  Domain to test against NxFilter.
+  -d, --domain TEXT  Domain to test against NxFilter. You can specify multiple
+                     domains by using multiple -d options. E.g. -d example.com
+                     -d example.org
   --help             Show this message and exit.
 ```
 
@@ -43,9 +45,19 @@ python3 app.py -d wikipedia.org
 ```
 And you will see something like this:
 ```bash
-Knowledge
+Domain: wikipedia.org - Knowledge
 ```
 
+It's also possible pass a list of domains to the app.py by using multiple -d options:
+```bash
+python3 app.py -d wikipedia.org -d github.com -d google.com
+```
+And you will see something like this:
+```bash
+Domain: wikipedia.org - Knowledge
+Domain: github.com - Computer/Technology
+Domain: google.com - Search Engine
+```
 ## License
 
 This project is released under the [MIT License](https://opensource.org/licenses/MIT). Please see the [license file](../LICENSE) for more information.
